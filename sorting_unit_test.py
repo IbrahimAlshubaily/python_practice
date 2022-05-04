@@ -1,6 +1,5 @@
 from quick_sort import quick_sort
 from merge_sort import merge_sort
-from insert_sort import insert_sort
 from bubble_sort import bubble_sort
 from random import shuffle
 
@@ -17,6 +16,5 @@ def test_method(sorting_function, inplace = False):
 
 test_method(merge_sort, inplace = False)
 test_method(quick_sort, inplace = True)
-test_method(insert_sort, inplace = True)
 test_method(bubble_sort, inplace = True)
 print('Unit tests passed!')
