@@ -8,9 +8,7 @@ def merge(arr_a, arr_b):
         else:
             merged_arr.append(arr_b[j])
             j+=1
-    merged_arr.extend(arr_a[i:])
-    merged_arr.extend(arr_b[j:])
-    return merged_arr
+    return merged_arr + arr_a[i:] + arr_b[j:]
 
 def merge_sort(arr):
     if len(arr) == 1:
@@ -23,7 +21,7 @@ for n in [20, 25, 50, 75]:
     test_case = list(range(n))
     random.shuffle(test_case)
     print(test_case)
-    test_case_a = merge_sort(test_case)
-    assert(test_case_a == list(range(n)))
-    print(test_case_a)
+    test_case = merge_sort(test_case)
+    assert(test_case == list(range(n)))
+    print(test_case)
     print('-'*25)
