@@ -1,5 +1,5 @@
-from sorting.quick_sort import quick_sort
-from sorting.merge_sort import merge_sort
+from quick_sort import quick_sort
+from merge_sort import merge_sort
 from bubble_sort import bubble_sort
 from random import shuffle
 
