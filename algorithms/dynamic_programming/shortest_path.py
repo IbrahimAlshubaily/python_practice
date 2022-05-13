@@ -1,5 +1,5 @@
+import time
 import numpy as np
-
 
 def shortest_path_brute_force(curr_row, curr_column, grid):
     if curr_row >= len(grid) or curr_column >= len(grid[0]):
@@ -19,11 +19,7 @@ def shortest_path_dynamic_programming(grid):
     print(grid)
     return grid[0,0]
 
-import time
-
-grid = np.zeros((15,15), dtype=int)
-
-
+grid = np.zeros((10,10), dtype=int)
 
 start = time.time()
 shortest_path_dp = shortest_path_dynamic_programming(grid=grid)
