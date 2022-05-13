@@ -36,9 +36,8 @@ def two_sum_lookup(nums, k):
 
     return False
     
-
-nums = [10, 7, 15, 3, 7, 7]
 k  = 14
+nums = [10, 7, 15, 3, 7, 7]
 print(two_sum_brute_force(nums , k))
 print(two_sum_sorted(nums , k))
 print(two_sum_lookup(nums, k))
