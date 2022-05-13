@@ -1,4 +1,4 @@
-#given a list l and number k, check if there are two elements in l that sum to k:
+#given a list and number k, check if there are two elements in the list that sum to k:
 def two_sum_brute_force(nums , k):
     for i in range(len(nums)-1):
         for j in range(i+1, len(nums)):
