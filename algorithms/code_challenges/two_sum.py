@@ -27,17 +27,29 @@ def two_sum_lookup(nums, k):
         elif len(lookup_table[nums[i]]) < 3:
             lookup_table[nums[i]] + [i]
         #else if the number exist more than twice, there is no need to track additional occurences.
-    
     for i in range(len(nums)):
         if k - nums[i] in lookup_table:
             for index in lookup_table[k - nums[i]]:
                 if index != i:
                     return True
+    return False
 
+
+def two_sum_complement_lookup(nums, k):
+    complements_set = set()
+    for v in nums:
+        if v in complements_set:
+            return True
+        complements_set.add(k - v)
     return False
     
-k  = 14
-nums = [10, 7, 15, 3, 7, 7]
-print(two_sum_brute_force(nums , k))
-print(two_sum_sorted(nums , k))
-print(two_sum_lookup(nums, k))
+
+
+
+
+k  = 17
+nums = [10, 5, 15, 3, 7, 7, 7]
+#print(two_sum_brute_force(nums , k))
+#print(two_sum_sorted(nums , k))
+#print(two_sum_lookup(nums, k))
+print(two_sum_complement_lookup(nums, k))
