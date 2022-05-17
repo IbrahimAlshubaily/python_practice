@@ -25,7 +25,7 @@ def two_sum_lookup(nums, k):
         if nums[i] not in lookup_table:
             lookup_table[nums[i]] = [i]
         elif len(lookup_table[nums[i]]) < 3:
-            lookup_table[nums[i]] + [i]
+            lookup_table[nums[i]] = lookup_table[nums[i]] + [i]
         #else if the number exist more than twice, there is no need to track additional occurences.
     for i in range(len(nums)):
         if k - nums[i] in lookup_table:
