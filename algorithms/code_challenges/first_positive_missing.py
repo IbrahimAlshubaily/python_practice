@@ -25,21 +25,14 @@ def first_positive_number_missing_optimal(numbers) -> int:
             numbers[i], numbers[j] = numbers[j], numbers[i]
             j += 1
     del numbers[:j]
+    n -= (j-1)
     # negate numbers[value] if value is positive (unvisited)
     for i, v in enumerate(numbers):
         curr_ind = abs(v) - 1
-        if curr_ind < n - 1 and numbers[curr_ind] > 0:
+        if curr_ind < (n - 1) and numbers[curr_ind] > 0:
             numbers[curr_ind] = -numbers[curr_ind]
     # if numbers[i] is positive, then i+1 was never visited
     for i, v in enumerate(numbers):
         if v > 0:
             return i + 1
     return n
-
-
-print(first_positive_number_missing_sorted([3, 4, -1, 1]))
-print(first_positive_number_missing_range([1, 2, 0]))
-print(first_positive_number_missing_optimal([1, 2, 0]))
-print(first_positive_number_missing_optimal([3, 4, -1, 1]))
-print(first_positive_number_missing_optimal([0, 10, 2, -10, -20]))
-print(first_positive_number_missing_optimal([2, 3, -7, 6, 8, 1, -10, 15]))
